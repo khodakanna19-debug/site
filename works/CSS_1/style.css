@@ -1,0 +1,127 @@
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #ffe6f0;
+  color: #4a004e;
+}
+
+
+.container {
+  display: grid;
+  grid-template-rows: 100px auto;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "hlavicka hlavicka"
+    "menu telo";
+  height: 100vh;
+}
+
+
+.hlavicka {
+  grid-area: hlavicka;
+  background-image: url('pozadie.jpg'); 
+  background-size: cover;               
+  background-position: center;          
+  background-repeat: no-repeat;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+
+.hlavicka h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+
+.menu {
+  grid-area: menu;
+  background-color: #ffb6d9;
+  box-shadow: inset -2px 0 6px rgba(0,0,0,0.1);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #4a004e;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #ff85c1;
+  color: white;
+}
+
+.menu .active {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.telo {
+  grid-area: telo;
+  padding: 20px;
+  background-color: #fff0f7;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  text-align: center;
+}
+
+/* Заголовок */
+.telo h2 {
+  font-size: 36px;       
+  font-weight: 600;      
+  color: #ff4da6;        
+  margin: 20px 0;
+  padding: 0;
+}
+
+
+.telo p {
+  font-size: 16px;       
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* Цитати курсивом */
+.telo p em {
+  font-size: 16px;
+  font-style: italic;   
+  color: #4a004e;        
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-rows: 80px auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hlavicka"
+      "menu"
+      "telo";
+  }
+
+  .menu {
+    text-align: center;
+  }
+
+  .menu li a {
+    border-bottom: none;
+    border-top: 1px solid rgba(255,255,255,0.5);
+  }
+}
