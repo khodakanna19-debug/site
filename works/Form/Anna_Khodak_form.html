@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>TvojePriezvisko TvojeMeno: Konkurz na pracovné miesto v leteckom podniku</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2>Prihláška do konkurzu – letecký podnik</h2>
+
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+
+    <!-- OSOBNÉ ÚDAJE -->
+    <fieldset>
+      <legend>Osobné údaje</legend>
+      <table>
+        <tr>
+          <td>Meno a priezvisko:</td>
+          <td><input type="text" name="meno" placeholder="Meno Priezvisko" required></td>
+          <td>Vek:</td>
+          <td><input type="number" name="vek" min="18" max="70" required></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" name="email" placeholder="napr. meno@email.sk" required></td>
+          <td>Mobil:</td>
+          <td><input type="tel" name="mobil" placeholder="09xxxxxxxx" pattern="[0-9]{9}" required></td>
+        </tr>
+        <tr>
+          <td>Adresa:</td>
+          <td colspan="3"><input type="text" name="adresa" placeholder="Ulica, mesto, PSČ" required></td>
+        </tr>
+        <tr>
+          <td>Pohlavie:</td>
+          <td colspan="3">
+            <label><input type="radio" name="pohlavie" value="Muž" required> Muž</label>
+            <label><input type="radio" name="pohlavie" value="Žena"> Žena</label>
+            <label><input type="radio" name="pohlavie" value="Iné"> Iné</label>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <!-- PROFESIJNÉ ÚDAJE -->
+    <fieldset>
+      <legend>Profesionálne údaje</legend>
+      <table>
+        <tr>
+          <td>Typ zamestnania:</td>
+          <td>
+            <select name="profesia" required>
+              <option value="">-- vyberte --</option>
+              <option>pilot</option>
+              <option>letuška</option>
+              <option>ochrana letiska</option>
+              <option>sekretárka</option>
+              <option>referent</option>
+              <option>vodič</option>
+              <option>upratovačka</option>
+              <option>predavač</option>
+              <option>poradca</option>
+              <option>vedúci oddelenia</option>
+            </select>
+          </td>
+          <td>Vzdelanie:</td>
+          <td>
+            <select name="vzdelanie" required>
+              <option value="">-- vyberte --</option>
+              <option>Základné</option>
+              <option>Stredoškolské</option>
+              <option>Vysokoškolské</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Dátum možného nástupu:</td>
+          <td><input type="date" name="nastup" required></td>
+          <td>Preferovaný pracovný čas:</td>
+          <td>
+            <select name="cas" required>
+              <option value="">-- vyberte --</option>
+              <option>plný úväzok</option>
+              <option>skrátený úväzok</option>
+              <option>brigáda</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Licencie (ak máte):</td>
+          <td colspan="3">
+            <label><input type="checkbox" name="LAPL" value="LAPL"> LAPL</label>
+            <label><input type="checkbox" name="PPL" value="PPL"> PPL</label>
+            <label><input type="checkbox" name="ATPL" value="ATPL"> ATPL</label>
+            <label><input type="checkbox" name="CPL" value="CPL"> CPL</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Jazykové znalosti:</td>
+          <td colspan="3"><input type="text" name="jazyky" placeholder="napr. angličtina – B2, nemčina – A2" required></td>
+        </tr>
+        <tr>
+          <td>Pracovné skúsenosti:</td>
+          <td colspan="3"><textarea name="skusenosti" rows="4" placeholder="Uveďte svoje doterajšie skúsenosti" required></textarea></td>
+        </tr>
+        <tr>
+          <td>Vaše úspechy / certifikáty:</td>
+          <td colspan="3"><input type="file" name="fileToUpload"></td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <!-- DOPLŇUJÚCE INFORMÁCIE -->
+    <fieldset>
+      <legend>Dodatočné informácie</legend>
+      <table>
+        <tr>
+          <td>Niečo o sebe:</td>
+          <td colspan="3"><textarea name="komentar" rows="5" placeholder="Napíšte niečo o sebe" required></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <label><input type="checkbox" name="suhlas" required> Súhlasím so spracovaním osobných údajov podľa GDPR</label>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <center>
+      <input type="reset" value="Vymazať">
+      <input type="submit" value="Odoslať">
+    </center>
+  </form>
+</body>
+</html>
+
